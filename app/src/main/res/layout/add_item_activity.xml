@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:background="#e8e8e7"
+    tools:context="com.example.koitoer.market.CatalogActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Add Item"
+                android:id="@+id/textView"
+                android:layout_gravity="left|center_horizontal"
+                android:textSize="@dimen/abc_text_size_large_material" />
+        </LinearLayout>
+
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Item :"
+                    android:layout_column="0"
+                    android:gravity="center"
+                    android:layout_weight="0.1"
+                    android:textStyle="bold"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:id="@+id/itemEditText"
+                    android:hint="Item description"
+                    android:layout_column="1"
+                    android:singleLine="true"
+                    android:layout_weight="0.5"
+                    android:gravity="center" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price :"
+                    android:layout_column="0"
+                    android:gravity="center"
+                    android:layout_weight="0.1"
+                    android:textStyle="bold"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:id="@+id/priceEditText"
+                    android:hint="0.00"
+                    android:layout_column="1"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:layout_weight="0.5"
+                    android:gravity="center" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Category :"
+                    android:id="@+id/textView4"
+                    android:layout_column="0"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="18dp" />
+
+                <Spinner
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:id="@+id/categoryItemSpinner"
+                    android:layout_column="1"
+                    android:layout_weight="0.5"
+                    android:gravity="center" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="right">
+
+
+        <Button android:layout_width="90dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="Cancel"
+            android:textColor="#fff"
+            android:textSize="13dp"
+            android:onClick="returnMain"
+            android:background="#eb543b"/>
+
+        <Button android:layout_width="90dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="Add"
+            android:textColor="#fff"
+            android:textSize="13dp"
+            android:background="#13b586"
+            android:onClick="addItem"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

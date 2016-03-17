@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Market</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="categories_array">
+        <item>Home</item>
+        <item>Food</item>
+        <item>Personal Care</item>
+    </string-array>
+
+
+</resources>
