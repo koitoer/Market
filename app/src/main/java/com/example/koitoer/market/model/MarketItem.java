@@ -26,6 +26,8 @@ public class MarketItem implements Serializable {
     @DatabaseField
     public boolean selected;
 
+    @DatabaseField
+    public String category;
 
     public MarketItem() {
     }
@@ -68,6 +70,16 @@ public class MarketItem implements Serializable {
         this.selected = selected;
     }
 
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+
     @Override
     public String toString() {
         return "MarketItem{" +
@@ -75,6 +87,7 @@ public class MarketItem implements Serializable {
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", selected=" + selected +
+                ", category='" + category + '\'' +
                 '}';
     }
 }

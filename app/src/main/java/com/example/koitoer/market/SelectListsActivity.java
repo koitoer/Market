@@ -33,8 +33,6 @@ public class SelectListsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-
-
                 Intent intent = new Intent(getApplicationContext(), CreateListActivity.class);
                 intent.putExtra(EXTRA_MESSAGE, position);
                 startActivity(intent);

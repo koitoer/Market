@@ -13,6 +13,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.example.koitoer.market.adapter.MarketItemAdapter;
+import com.example.koitoer.market.adapter.MarketItemAdapter3;
 import com.example.koitoer.market.model.MarketItem;
 import com.example.koitoer.market.service.MarketService;
 import com.example.koitoer.market.service.MarketServiceLocal;
@@ -24,7 +25,7 @@ public class CatalogLibraryActivity extends AppCompatActivity implements android
 
     ListView lv;
     List<MarketItem> marketItemList;
-    MarketItemAdapter marketItemAdapter;
+    MarketItemAdapter3 marketItemAdapter;
     MarketService marketService = new MarketServiceLocal();
 
 
@@ -41,7 +42,7 @@ public class CatalogLibraryActivity extends AppCompatActivity implements android
     private void displayItemList() {
         marketService.setContext(this);
         marketItemList = marketService.getMarketCatalog();
-        marketItemAdapter = new MarketItemAdapter(marketItemList, this);
+        marketItemAdapter = new MarketItemAdapter3(marketItemList, this);
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(marketItemAdapter);
     }
@@ -74,8 +75,6 @@ public class CatalogLibraryActivity extends AppCompatActivity implements android
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-        Log.d("Buttonmae", buttonView.toString());
 
         if(buttonView.isShown())
         {

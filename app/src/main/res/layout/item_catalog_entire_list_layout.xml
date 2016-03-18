@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/itemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gp2"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+                <TableRow >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/priceLabel"
+                        android:text="Price:"
+                        android:textStyle="italic"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                        android:id="@+id/dist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/priceLabel"
+                        android:textStyle="italic"
+                        android:textSize="12dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="right">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Category:"
+                        android:id="@+id/categoryLabel"
+                        android:textStyle="italic"
+                        android:layout_gravity="right"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                        android:id="@+id/categoryName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/categoryLabel"
+                        android:textStyle="italic"
+                        android:textSize="12dp"/>
+
+                </RelativeLayout>
+
+                </TableRow>
+
+            </TableLayout>
+
+       </LinearLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="Delete"
+        android:textSize="12dp" />
+
+</LinearLayout>
