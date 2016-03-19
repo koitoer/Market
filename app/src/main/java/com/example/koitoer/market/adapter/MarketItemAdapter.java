@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.koitoer.market.CatalogLibraryActivity;
 import com.example.koitoer.market.MainActivity;
 import com.example.koitoer.market.R;
+import com.example.koitoer.market.SelectItemsActivity;
 import com.example.koitoer.market.model.MarketItem;
 
 import java.text.NumberFormat;
@@ -23,37 +24,10 @@ import java.util.Locale;
 /**
  * Created by koitoer on 2/21/16.
  */
-public class MarketItemAdapter extends ArrayAdapter<MarketItem> {
-
-    NumberFormat nf = NumberFormat.getInstance(Locale.US);
-
-    private List<MarketItem> marketItemList;
-    private Context context;
-
-    public List<MarketItem> getMarketItemList() {
-        return marketItemList;
-    }
-
-    public void setMarketItemList(List<MarketItem> marketItemList) {
-        this.marketItemList = marketItemList;
-    }
+public class MarketItemAdapter extends MarketItemAdapterBase {
 
     public MarketItemAdapter(List<MarketItem> marketItemList,Context context) {
         super(context, R.layout.single_listview_item, marketItemList);
-        this.marketItemList = marketItemList;
-        this.context = context;
-    }
-
-    public MarketItemAdapter(List<MarketItem> marketItemList, Context context, int i){
-        super(context, i, marketItemList);
-        this.marketItemList = marketItemList;
-        this.context = context;
-    }
-
-    private static class MarketItemHolder{
-        public TextView itemName;
-        public TextView itemPrice;
-        public CheckBox checkBox;
     }
 
     @Override
@@ -62,21 +36,21 @@ public class MarketItemAdapter extends ArrayAdapter<MarketItem> {
         MarketItemHolder marketItemHolder = new MarketItemHolder();
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v= inflater.inflate(R.layout.item_catalog_entire_list_layout, null);
+            v= inflater.inflate(R.layout.activity_catalog_library, null);
             marketItemHolder.itemName = (TextView)v.findViewById(R.id.itemName);
             marketItemHolder.itemPrice = (TextView)v.findViewById(R.id.dist);
             marketItemHolder.checkBox = (CheckBox)v.findViewById(R.id.chk_box);
-           // marketItemHolder.checkBox.setOnCheckedChangeListener((CatalogLibraryActivity)context);
+            marketItemHolder.checkBox.setOnCheckedChangeListener((SelectItemsActivity)context);
             v.setTag(marketItemHolder);
         }else{
-            marketItemHolder =( MarketItemHolder)v.getTag();
+            marketItemHolder =( MarketItemHolder) v.getTag();
         }
 
         MarketItem marketItem = marketItemList.get(position);
         marketItemHolder.itemName.setText(marketItem.getName());
         marketItemHolder.itemPrice.setText(nf.format(marketItem.getPrice()));
-        //marketItemHolder.checkBox.setChecked(marketItem.isSelected());
-       // marketItemHolder.checkBox.setTag(marketItem);
+        marketItemHolder.checkBox.setChecked(marketItem.isSelected());
+        marketItemHolder.checkBox.setTag(marketItem);
         return v;
     }
 }

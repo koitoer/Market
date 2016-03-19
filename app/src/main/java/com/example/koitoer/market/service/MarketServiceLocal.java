@@ -202,4 +202,13 @@ public class MarketServiceLocal implements MarketService {
         }
         //Make the update here
     }
+
+    @Override
+    public void deleteMarketItem(long itemId) {
+        try {
+            getHelper().getSimpleItemDataDao().delete(new MarketItem(itemId,"",0.00));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

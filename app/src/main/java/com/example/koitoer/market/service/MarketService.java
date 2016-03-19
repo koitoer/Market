@@ -25,4 +25,6 @@ public interface MarketService {
     List<MarketList> getSavedLists();
 
     void updateMarketList(int listIndex, List<MarketItem> marketItems);
+
+    void deleteMarketItem(long itemId);
 }

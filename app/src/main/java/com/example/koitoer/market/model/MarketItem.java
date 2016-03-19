@@ -24,10 +24,13 @@ public class MarketItem implements Serializable {
     public double price;
 
     @DatabaseField
-    public boolean selected;
+    public String category;
 
     @DatabaseField
-    public String category;
+    public boolean marked;
+
+    @DatabaseField
+    public boolean selected;
 
     public MarketItem() {
     }
@@ -70,7 +73,6 @@ public class MarketItem implements Serializable {
         this.selected = selected;
     }
 
-
     public String getCategory() {
         return category;
     }
@@ -79,6 +81,13 @@ public class MarketItem implements Serializable {
         this.category = category;
     }
 
+    public boolean isMarked() {
+        return marked;
+    }
+
+    public void setMarked(boolean marked) {
+        this.marked = marked;
+    }
 
     @Override
     public String toString() {

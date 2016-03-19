@@ -25,7 +25,8 @@
         </activity>
         <activity android:name=".CatalogActivity" />
         <activity android:name=".CatalogLibraryActivity" />
-        <activity android:name=".CreateListActivity"></activity>
+        <activity android:name=".CreateListActivity"/>
+        <activity android:name=".SelectItemsActivity"/>
     </application>
 
 </manifest>

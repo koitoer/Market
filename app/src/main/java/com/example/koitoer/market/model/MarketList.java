@@ -74,11 +74,6 @@ public class MarketList implements Serializable {
 
     @Override
     public String toString() {
-        return "MarketList{" +
-                "id=" + id +
-                ", date=" + date +
-                ", name='" + name + '\'' +
-                ", marketItemList=" + marketItemList +
-                '}';
+        return "MarketList [" + id + "] : " + date ;
     }
 }
